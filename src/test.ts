@@ -103,7 +103,7 @@ export const test = () => {
 
   // public, private, protected */
 
-  const foo = (arg: string) => {
+/*   const foo = (arg: string) => {
     return arg;
   }
 
@@ -113,5 +113,18 @@ export const test = () => {
   }
 
   bar<string>("Hello World");
+ */
+
+
+  const fetchUserData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1", {
+      userId: 1,
+    });
+    return response.data.status; // true, false, null, undefined
+  }
+
+  // null合体演算子によりfalseの場合nullかundefindを返す ??
+  const isActive:boolean = fetchUserData() ?? false;
+
 
 };
