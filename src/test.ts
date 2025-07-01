@@ -116,7 +116,7 @@ export const test = () => {
  */
 
 
-  const fetchUserData = async () => {
+/*   const fetchUserData = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users/1", {
       userId: 1,
     });
@@ -125,6 +125,18 @@ export const test = () => {
 
   // null合体演算子によりfalseの場合nullかundefindを返す ??
   const isActive:boolean = fetchUserData() ?? false;
+ */
 
+  const fetchUserData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/info", {
+      userId: 1,
+    });
+    return response.data.status; // true, false, null, undefined
+  }
+
+  const userInfo = fetchUserData();
+
+  // オプショナルチェーン
+  const fatherName = userInfoData?.family?.father;
 
 };
