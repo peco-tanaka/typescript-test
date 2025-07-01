@@ -1,5 +1,5 @@
 export const test = () => {
-  console.log("Test function executed");
+/*   console.log("Test function executed");
 
   const name: string = "Mike";
   const age: number = 30;
@@ -14,7 +14,7 @@ export const test = () => {
   const none: null = null;
   const notDefined: undefined = undefined;
   const random: any = "HEllo World";
-  const gender: "male" | "female" = "male";
+  const gender: "male" | "female" = "male"; */
 
 /*   // 引数に文字列の配列を受け取り、その中身の順番にして出力する関数を定義します。
   const reverseArray = (arr: string[], hasTom?: boolean): string[] => {
@@ -34,4 +34,43 @@ export const test = () => {
 
   console.log(reverseArray(["a", "b", "c", "d"], true));
    */
+
+  // ユーザー情報を表すオブジェクトを定義
+  const user = {
+    userId: 1,
+    name: "Mike",
+    age: 30,
+    email: "sample@gmail.com",
+    isActive: true
+  }
+
+  // ユーザー情報の型を定義
+  interface UserProps {
+    userId: number;
+    name: string;
+    age: number;
+    email?: string;
+    isActive: boolean;
+  }
+
+  // UserPropsを継承したAdminUserインターフェースをでroleプロパティを追加
+  interface AdminUserProps extends UserProps{
+    role: string;
+  }
+
+  // 引数にアカウント情報を入れるとアカウントを作成する関数を定義（中身省略）
+  const createAccount = (accountInfo: AdminUserProps) => {
+
+  }
+
+  createAccount({
+    userId: 1,
+    name: "Mike",
+    age: 30,
+    email: "",
+    isActive: true,
+    role: "admin"
+  })
+
+
 };
