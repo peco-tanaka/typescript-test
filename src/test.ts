@@ -72,7 +72,7 @@ export const test = () => {
     role: "admin"
   }) */
 
-  // クラスの型定義
+/*   // クラスの型定義
   class User {
     userId: number;
     name: string;
@@ -101,6 +101,17 @@ export const test = () => {
   User.sayHelloWorld();
   user.getProfile();
 
-  // public, private, protected
+  // public, private, protected */
+
+  const foo = (arg: string) => {
+    return arg;
+  }
+
+  // ジェネリクス
+  const bar = <T>(arg: T): T => {
+    return arg;
+  }
+
+  bar<string>("Hello World");
 
 };
