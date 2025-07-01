@@ -35,7 +35,7 @@ export const test = () => {
   console.log(reverseArray(["a", "b", "c", "d"], true));
    */
 
-  // ユーザー情報を表すオブジェクトを定義
+/*   // ユーザー情報を表すオブジェクトを定義
   const user = {
     userId: 1,
     name: "Mike",
@@ -70,7 +70,37 @@ export const test = () => {
     email: "",
     isActive: true,
     role: "admin"
-  })
+  }) */
 
+  // クラスの型定義
+  class User {
+    userId: number;
+    name: string;
+    age: number;
+    email?: string;
+    isActive: boolean;
+
+    constructor(userId: number, name: string, age: number, email?: string, isActive: boolean = true) {
+      this.userId = userId;
+      this.name = name;
+      this.age = age;
+      this.email = email;
+      this.isActive = isActive;
+    }
+
+    private getProfile(): string {
+      return `Name: ${this.name}, Age: ${this.age}`;
+    }
+
+    static sayHelloWorld(): void {
+      console.log("Hello World");
+    }
+  }
+
+  const user = new User(1, "Mike", 30, "", true);
+  User.sayHelloWorld();
+  user.getProfile();
+
+  // public, private, protected
 
 };
